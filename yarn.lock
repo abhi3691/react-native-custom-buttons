@@ -6156,9 +6156,9 @@ json-stringify-safe@^5.0.1:
   integrity sha512-ZClg6AaYvamvYEE82d3Iyd3vSSIjQ+odgjaTzRuO3s7toCdFKczob2i0zCh7JE8kWn17yvAWhUVxvqGwUalsRA==
 
 json5@^2.2.1:
-  version "2.2.1"
-  resolved "https://registry.npmjs.org/json5/-/json5-2.2.1.tgz"
-  integrity sha512-1hqLFMSrGHRHxav9q9gNjJ5EXznIxGVO09xQRrwplcS8qs28pZ8s8hupZAmqDwZUmVZ2Qb2jnyPOWcDH8m8dlA==
+  version "2.2.3"
+  resolved "https://registry.yarnpkg.com/json5/-/json5-2.2.3.tgz#78cd6f1a19bdc12b73db5ad0c61efd66c1e29283"
+  integrity sha512-XmOWe7eyHYH14cLdVPoyg+GOH3rYX++KpzrylJwSW98t3Nk+U8XOl8FWKOgwtzdb8lXGf6zYwDUzeHMWfxasyg==
 
 jsonfile@^2.1.0:
   version "2.4.0"
@@ -7802,16 +7802,10 @@ react-native-codegen@^0.70.6:
     jscodeshift "^0.13.1"
     nullthrows "^1.1.1"
 
-"react-native-custom-buttons@file:.":
-  version "0.1.0"
-  dependencies:
-    react-native-custom-buttons "file:."
-    react-native-vector-icons "^9.2.0"
-
 "react-native-custom-buttons@file:../react-native-custom-buttons":
   version "0.1.0"
   dependencies:
-    react-native-custom-buttons "file:../../../AppData/Local/Yarn/Cache/v6/npm-react-native-custom-buttons-0.1.0-c3620dfc-9a81-45fe-997c-d11ed872af8a-1669488418146/node_modules/react-native-custom-buttons"
+    react-native-custom-buttons "file:../react-native-custom-buttons"
     react-native-vector-icons "^9.2.0"
 
 react-native-gradle-plugin@^0.70.3:
