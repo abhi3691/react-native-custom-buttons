@@ -1,6 +1,6 @@
 //import Packages
-import { Text, TouchableHighlight } from 'react-native';
-import React, { FC } from 'react';
+import { ActivityIndicator, Text, TouchableHighlight } from 'react-native';
+import React from 'react';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import Entypo from 'react-native-vector-icons/Entypo';
 import EvilIcons from 'react-native-vector-icons/EvilIcons';
@@ -16,113 +16,113 @@ import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import Octicons from 'react-native-vector-icons/Octicons';
 import type Props from './Props';
 import FontRatio from '../global_functions/font_ratio/FontRatio';
-import styles from './styles,';
+import styles from './styles';
 
-const Buttons: FC<Props> = ({
-  type,
-  size,
-  iconName,
-  title,
-  color,
-  onPress,
-  containerStyles,
-  textStyle,
-  children,
-}) => {
+const Buttons = (props: Props) => {
   return (
     <TouchableHighlight
       underlayColor="transprent"
-      onPress={onPress}
-      style={[containerStyles, styles.container]}
+      onPress={props.onPress}
+      style={[props.containerStyles, styles.container]}
     >
-      {type == 'AntDesign' ? (
-        <AntDesign
-          size={FontRatio(size ? size : 20)}
-          color={color}
-          name={iconName ? iconName : ''}
-        />
-      ) : type == 'Entypo' ? (
-        <Entypo
-          size={FontRatio(size ? size : 20)}
-          color={color}
-          name={iconName ? iconName : ''}
-        />
-      ) : type == 'EvilIcons' ? (
-        <EvilIcons
-          size={FontRatio(size ? size : 20)}
-          color={color}
-          name={iconName ? iconName : ''}
-        />
-      ) : type == 'Feather' ? (
-        <Feather
-          size={FontRatio(size ? size : 20)}
-          color={color}
-          name={iconName ? iconName : ''}
-        />
-      ) : type == 'FontAwesome' ? (
-        <FontAwesome
-          size={FontRatio(size ? size : 20)}
-          color={color}
-          name={iconName ? iconName : ''}
-        />
-      ) : type == 'FontAwesome5' ? (
-        <FontAwesome5
-          size={FontRatio(size ? size : 20)}
-          color={color}
-          name={iconName ? iconName : ''}
-        />
-      ) : type == 'FontAwesome5Pro' ? (
-        <FontAwesome5Pro
-          size={FontRatio(size ? size : 20)}
-          color={color}
-          name={iconName ? iconName : ''}
-        />
-      ) : type == 'Fontisto' ? (
-        <Fontisto
-          size={FontRatio(size ? size : 20)}
-          color={color}
-          name={iconName ? iconName : ''}
-        />
-      ) : type == 'Foundation' ? (
-        <Foundation
-          size={FontRatio(size ? size : 20)}
-          color={color}
-          name={iconName ? iconName : ''}
-        />
-      ) : type == 'Ionicons' ? (
-        <Ionicons
-          size={FontRatio(size ? size : 20)}
-          color={color}
-          name={iconName ? iconName : ''}
-        />
-      ) : type == 'MaterialCommunityIcons' ? (
-        <MaterialCommunityIcons
-          size={FontRatio(size ? size : 20)}
-          color={color}
-          name={iconName ? iconName : ''}
-        />
-      ) : type == 'MaterialIcons' ? (
-        <MaterialIcons
-          size={FontRatio(size ? size : 20)}
-          color={color}
-          name={iconName ? iconName : ''}
-        />
-      ) : type == 'Octicons' ? (
-        <Octicons
-          size={FontRatio(size ? size : 20)}
-          color={color}
-          name={iconName ? iconName : ''}
-        />
-      ) : type == 'Text' ? (
-        <Text style={textStyle}>{title}</Text>
-      ) : type == 'SVG' ? (
-        children
+      {props.isLoading == true ? (
+        <ActivityIndicator size={props.loaderSize} color={props.loadercolor} />
       ) : (
-        <Ionicons
-          size={FontRatio(size ? size : 20)}
-          color={color}
-          name={iconName ? iconName : ''}
-        />
+        <>
+          {props.type === 'vector Icon' ? (
+            <>
+              {props.fontFamily == 'AntDesign' ? (
+                <AntDesign
+                  size={FontRatio(props.iconSize ? props.iconSize : 20)}
+                  color={props.iconcolor}
+                  name={props.iconName}
+                />
+              ) : props.fontFamily == 'Entypo' ? (
+                <Entypo
+                  size={FontRatio(props.iconSize ? props.iconSize : 20)}
+                  color={props.iconcolor}
+                  name={props.iconName}
+                />
+              ) : props.fontFamily == 'EvilIcons' ? (
+                <EvilIcons
+                  size={FontRatio(props.iconSize ? props.iconSize : 20)}
+                  color={props.iconcolor}
+                  name={props.iconName}
+                />
+              ) : props.fontFamily == 'Feather' ? (
+                <Feather
+                  size={FontRatio(props.iconSize ? props.iconSize : 20)}
+                  color={props.iconcolor}
+                  name={props.iconName}
+                />
+              ) : props.fontFamily == 'FontAwesome' ? (
+                <FontAwesome
+                  size={FontRatio(props.iconSize ? props.iconSize : 20)}
+                  color={props.iconcolor}
+                  name={props.iconName}
+                />
+              ) : props.fontFamily == 'FontAwesome5' ? (
+                <FontAwesome5
+                  size={FontRatio(props.iconSize ? props.iconSize : 20)}
+                  color={props.iconcolor}
+                  name={props.iconName}
+                />
+              ) : props.fontFamily == 'FontAwesome5Pro' ? (
+                <FontAwesome5Pro
+                  size={FontRatio(props.iconSize ? props.iconSize : 20)}
+                  color={props.iconcolor}
+                  name={props.iconName}
+                />
+              ) : props.fontFamily == 'Fontisto' ? (
+                <Fontisto
+                  size={FontRatio(props.iconSize ? props.iconSize : 20)}
+                  color={props.iconcolor}
+                  name={props.iconName}
+                />
+              ) : props.fontFamily == 'Foundation' ? (
+                <Foundation
+                  size={FontRatio(props.iconSize ? props.iconSize : 20)}
+                  color={props.iconcolor}
+                  name={props.iconName}
+                />
+              ) : props.fontFamily == 'Ionicons' ? (
+                <Ionicons
+                  size={FontRatio(props.iconSize ? props.iconSize : 20)}
+                  color={props.iconcolor}
+                  name={props.iconName}
+                />
+              ) : props.fontFamily == 'MaterialCommunityIcons' ? (
+                <MaterialCommunityIcons
+                  size={FontRatio(props.iconSize ? props.iconSize : 20)}
+                  color={props.iconcolor}
+                  name={props.iconName}
+                />
+              ) : props.fontFamily == 'MaterialIcons' ? (
+                <MaterialIcons
+                  size={FontRatio(props.iconSize ? props.iconSize : 20)}
+                  color={props.iconcolor}
+                  name={props.iconName}
+                />
+              ) : props.fontFamily == 'Octicons' ? (
+                <Octicons
+                  size={FontRatio(props.iconSize ? props.iconSize : 20)}
+                  color={props.iconcolor}
+                  name={props.iconName}
+                />
+              ) : (
+                <Ionicons
+                  size={FontRatio(props.iconSize ? props.iconSize : 20)}
+                  color={props.iconcolor}
+                  name={props.iconName}
+                />
+              )}
+            </>
+          ) : props.type == 'Text' ? (
+            <Text style={props.textStyle}>{props.title}</Text>
+          ) : (
+            props.type == 'SVG' && props.children
+          )}
+        </>
       )}
     </TouchableHighlight>
   );

@@ -19,59 +19,84 @@ npm install react-native-vector-icons
 
 ```
 
-## Usage
+## Buttons Component
 
-```js
-import Buttons from 'react-native-custom-buttons';
+### Props
 
-// ...
+| Prop            | Required                       | Type                          | Description                                       |
+| --------------- | ------------------------------ | ----------------------------- | ------------------------------------------------- | --------------- | ------------------------------------------------------------------ |
+| onPress         | Yes                            | Function                      | Callback function to be executed on button press. |
+| containerStyles | No                             | ViewStyle                     | Custom styles for the button container.           |
+| type            | Yes                            | String (`"Text"               | "SVG"                                             | "vector Icon"`) | Type of button. Choose one: `"Text"`, `"SVG"`, or `"vector Icon"`. |
+| ...iconProps    | Yes (if type is "vector Icon") | [iconProps](#iconprops)       | Icon-specific properties.                         |
+| ...textProps    | Yes (if type is "Text")        | [textProps](#textprops)       | Text-specific properties.                         |
+| ...svgProps     | Yes (if type is "SVG")         | [svgProps](#svgprops)         | SVG-specific properties.                          |
+| ...loadingProps | No                             | [loadingProps](#loadingprops) | Loading-specific properties.                      |
 
-import { StyleSheet, Text, View } from 'react-native';
-import React from 'react';
-import Buttons from 'react-native-custom-buttons';
-const App = () => {
-  return (
-    <View style={styles.container}>
-      <Buttons
-        onPress={() => {}}
-        type="Text"
-        title="open"
-        containerStyles={{
-          backgroundColor: '#000',
-          width: '60%',
-          height: '10%',
-          borderRadius: 30,
-        }}
-        textStyle={{ fontSize: 10, color: '#fff' }}
-      />
-      <Buttons
-        onPress={() => {}}
-        type="Ionicons"
-        color="#fff"
-        iconName="tv"
-        size={20}
-        containerStyles={{
-          backgroundColor: '#000',
-          width: 50,
-          height: 50,
-          borderRadius: 50,
-          margin: 20,
-        }}
-      />
-    </View>
-  );
-};
+#### iconProps
 
-export default App;
+| Prop       | Required | Type                 | Description                        |
+| ---------- | -------- | -------------------- | ---------------------------------- | ----- | ------------------------- |
+| fontFamily | Yes      | String (`'AntDesign' | 'Entypo'                           | ...`) | Font family for the icon. |
+| iconSize   | No       | Number               | Size of the icon. Default is `20`. |
+| iconName   | Yes      | String               | Name of the icon.                  |
+| iconColor  | Yes      | ColorValue           | Color of the icon.                 |
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
-```
+#### textProps
+
+| Prop      | Required | Type      | Description                  |
+| --------- | -------- | --------- | ---------------------------- |
+| title     | No       | String    | Text content for the button. |
+| textStyle | No       | TextStyle | Custom styles for the text.  |
+
+#### svgProps
+
+| Prop     | Required | Type      | Description                          |
+| -------- | -------- | --------- | ------------------------------------ |
+| children | No       | ReactNode | Child components for the SVG button. |
+
+#### loadingProps
+
+| Prop        | Required | Type                                      | Description                                        |
+| ----------- | -------- | ----------------------------------------- | -------------------------------------------------- |
+| isLoading   | No       | Boolean                                   | Indicates if the button is in a loading state.     |
+| loaderColor | No       | ColorValue                                | Color of the loading indicator.                    |
+| loaderSize  | No       | Number or 'small' or 'large' or undefined | Size of the loading indicator. Default is `small`. |
+
+### Example Usage
+
+```jsx
+import Buttons from 'path/to/Buttons';
+
+const IconButton = () => (
+  <Buttons
+    onPress={() => console.log('Icon button pressed')}
+    type="vector Icon"
+    fontFamily="FontAwesome"
+    iconSize={30}
+    iconName="star"
+    iconColor="yellow"
+  />
+);
+
+const TextButton = () => (
+  <Buttons
+    onPress={() => console.log('Text button pressed')}
+    type="Text"
+    title="Click me"
+    textStyle={{ color: 'white' }}
+  />
+);
+
+const SVGButton = () => (
+  <Buttons
+    onPress={() => console.log('SVG button pressed')}
+    type="SVG"
+  >
+    {/* Your SVG component here */}
+  </Buttons>
+);
+
 
 ## Contributing
 
@@ -80,3 +105,4 @@ See the [contributing guide](CONTRIBUTING.md) to learn how to contribute to the 
 ## License
 
 MIT
+```

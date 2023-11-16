@@ -7803,15 +7803,9 @@ react-native-codegen@^0.70.6:
     nullthrows "^1.1.1"
 
 "react-native-custom-buttons@file:.":
-  version "0.1.0"
+  version "0.1.1"
   dependencies:
-    react-native-custom-buttons "file:."
-    react-native-vector-icons "^9.2.0"
-
-"react-native-custom-buttons@file:../react-native-custom-buttons":
-  version "0.1.0"
-  dependencies:
-    react-native-custom-buttons "file:../../../AppData/Local/Yarn/Cache/v6/npm-react-native-custom-buttons-0.1.0-c3620dfc-9a81-45fe-997c-d11ed872af8a-1669488418146/node_modules/react-native-custom-buttons"
+    react-native-custom-buttons "file:../../../../Library/Caches/Yarn/v6/npm-react-native-custom-buttons-0.1.1-82fffb75-ec45-403b-8572-b3eae61b7aa2-1700154019476/node_modules/react-native-custom-buttons"
     react-native-vector-icons "^9.2.0"
 
 react-native-gradle-plugin@^0.70.3:
