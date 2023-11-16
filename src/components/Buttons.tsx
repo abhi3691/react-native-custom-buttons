@@ -25,85 +25,85 @@ const Buttons = (props: Props) => {
       onPress={props.onPress}
       style={[props.containerStyles, styles.container]}
     >
-      {props.isLoading == true ? (
+      {props.isLoading === true ? (
         <ActivityIndicator size={props.loaderSize} color={props.loadercolor} />
       ) : (
         <>
           {props.type === 'vector Icon' ? (
             <>
-              {props.fontFamily == 'AntDesign' ? (
+              {props.fontFamily === 'AntDesign' ? (
                 <AntDesign
                   size={FontRatio(props.iconSize ? props.iconSize : 20)}
                   color={props.iconcolor}
                   name={props.iconName}
                 />
-              ) : props.fontFamily == 'Entypo' ? (
+              ) : props.fontFamily === 'Entypo' ? (
                 <Entypo
                   size={FontRatio(props.iconSize ? props.iconSize : 20)}
                   color={props.iconcolor}
                   name={props.iconName}
                 />
-              ) : props.fontFamily == 'EvilIcons' ? (
+              ) : props.fontFamily === 'EvilIcons' ? (
                 <EvilIcons
                   size={FontRatio(props.iconSize ? props.iconSize : 20)}
                   color={props.iconcolor}
                   name={props.iconName}
                 />
-              ) : props.fontFamily == 'Feather' ? (
+              ) : props.fontFamily === 'Feather' ? (
                 <Feather
                   size={FontRatio(props.iconSize ? props.iconSize : 20)}
                   color={props.iconcolor}
                   name={props.iconName}
                 />
-              ) : props.fontFamily == 'FontAwesome' ? (
+              ) : props.fontFamily === 'FontAwesome' ? (
                 <FontAwesome
                   size={FontRatio(props.iconSize ? props.iconSize : 20)}
                   color={props.iconcolor}
                   name={props.iconName}
                 />
-              ) : props.fontFamily == 'FontAwesome5' ? (
+              ) : props.fontFamily === 'FontAwesome5' ? (
                 <FontAwesome5
                   size={FontRatio(props.iconSize ? props.iconSize : 20)}
                   color={props.iconcolor}
                   name={props.iconName}
                 />
-              ) : props.fontFamily == 'FontAwesome5Pro' ? (
+              ) : props.fontFamily === 'FontAwesome5Pro' ? (
                 <FontAwesome5Pro
                   size={FontRatio(props.iconSize ? props.iconSize : 20)}
                   color={props.iconcolor}
                   name={props.iconName}
                 />
-              ) : props.fontFamily == 'Fontisto' ? (
+              ) : props.fontFamily === 'Fontisto' ? (
                 <Fontisto
                   size={FontRatio(props.iconSize ? props.iconSize : 20)}
                   color={props.iconcolor}
                   name={props.iconName}
                 />
-              ) : props.fontFamily == 'Foundation' ? (
+              ) : props.fontFamily === 'Foundation' ? (
                 <Foundation
                   size={FontRatio(props.iconSize ? props.iconSize : 20)}
                   color={props.iconcolor}
                   name={props.iconName}
                 />
-              ) : props.fontFamily == 'Ionicons' ? (
+              ) : props.fontFamily === 'Ionicons' ? (
                 <Ionicons
                   size={FontRatio(props.iconSize ? props.iconSize : 20)}
                   color={props.iconcolor}
                   name={props.iconName}
                 />
-              ) : props.fontFamily == 'MaterialCommunityIcons' ? (
+              ) : props.fontFamily === 'MaterialCommunityIcons' ? (
                 <MaterialCommunityIcons
                   size={FontRatio(props.iconSize ? props.iconSize : 20)}
                   color={props.iconcolor}
                   name={props.iconName}
                 />
-              ) : props.fontFamily == 'MaterialIcons' ? (
+              ) : props.fontFamily === 'MaterialIcons' ? (
                 <MaterialIcons
                   size={FontRatio(props.iconSize ? props.iconSize : 20)}
                   color={props.iconcolor}
                   name={props.iconName}
                 />
-              ) : props.fontFamily == 'Octicons' ? (
+              ) : props.fontFamily === 'Octicons' ? (
                 <Octicons
                   size={FontRatio(props.iconSize ? props.iconSize : 20)}
                   color={props.iconcolor}
@@ -117,10 +117,10 @@ const Buttons = (props: Props) => {
                 />
               )}
             </>
-          ) : props.type == 'Text' ? (
+          ) : props.type === 'Text' ? (
             <Text style={props.textStyle}>{props.title}</Text>
           ) : (
-            props.type == 'SVG' && props.children
+            props.type === 'SVG' && props.children
           )}
         </>
       )}
