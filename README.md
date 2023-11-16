@@ -94,6 +94,11 @@ const SVGButton = () => (
   </Buttons>
 );
 
+```
+
+For a usage example, refer to the [example directory](https://github.com/abhi3691/react-native-custom-buttons/tree/master/example) in the repository.
+
+
 
 ## Contributing
 
