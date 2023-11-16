@@ -24,44 +24,41 @@ npm install react-native-vector-icons
 ### Props
 
 | Prop            | Required                       | Type                          | Description                                       |
-| --------------- | ------------------------------ | ----------------------------- | ------------------------------------------------- | --------------- | ------------------------------------------------------------------ |
+| --------------- | ------------------------------ | ----------------------------- | ------------------------------------------------- |
 | onPress         | Yes                            | Function                      | Callback function to be executed on button press. |
 | containerStyles | No                             | ViewStyle                     | Custom styles for the button container.           |
-| type            | Yes                            | String (`"Text"               | "SVG"                                             | "vector Icon"`) | Type of button. Choose one: `"Text"`, `"SVG"`, or `"vector Icon"`. |
-| ...iconProps    | Yes (if type is "vector Icon") | [iconProps](#iconprops)       | Icon-specific properties.                         |
-| ...textProps    | Yes (if type is "Text")        | [textProps](#textprops)       | Text-specific properties.                         |
-| ...svgProps     | Yes (if type is "SVG")         | [svgProps](#svgprops)         | SVG-specific properties.                          |
-| ...loadingProps | No                             | [loadingProps](#loadingprops) | Loading-specific properties.                      |
+| type            | Yes                            |  `"Text"`, `"SVG"`, or `"vector Icon"` | Type of button. Choose one |
 
-#### iconProps
+### iconProps
 
 | Prop       | Required | Type                 | Description                        |
-| ---------- | -------- | -------------------- | ---------------------------------- | ----- | ------------------------- |
-| fontFamily | Yes      | String (`'AntDesign' | 'Entypo'                           | ...`) | Font family for the icon. |
+| ---------- | -------- | -------------------- | ---------------------------------- |
+| fontFamily | Yes      | `'AntDesign'`, `'Entypo'`, ... | Font family for the icon. |
 | iconSize   | No       | Number               | Size of the icon. Default is `20`. |
 | iconName   | Yes      | String               | Name of the icon.                  |
 | iconColor  | Yes      | ColorValue           | Color of the icon.                 |
 
-#### textProps
+### textProps
 
 | Prop      | Required | Type      | Description                  |
 | --------- | -------- | --------- | ---------------------------- |
 | title     | No       | String    | Text content for the button. |
 | textStyle | No       | TextStyle | Custom styles for the text.  |
 
-#### svgProps
+### svgProps
 
 | Prop     | Required | Type      | Description                          |
 | -------- | -------- | --------- | ------------------------------------ |
 | children | No       | ReactNode | Child components for the SVG button. |
 
-#### loadingProps
+### loadingProps
 
 | Prop        | Required | Type                                      | Description                                        |
 | ----------- | -------- | ----------------------------------------- | -------------------------------------------------- |
 | isLoading   | No       | Boolean                                   | Indicates if the button is in a loading state.     |
 | loaderColor | No       | ColorValue                                | Color of the loading indicator.                    |
 | loaderSize  | No       | Number or 'small' or 'large' or undefined | Size of the loading indicator. Default is `small`. |
+
 
 ### Example Usage
 
